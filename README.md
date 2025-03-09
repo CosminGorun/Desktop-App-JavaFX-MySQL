@@ -1,3 +1,5 @@
-I have implemented a prototype application to manage the data of a transportation company stored in a database.
-I used MySQL for the database and JavaFX for the graphical interface, connecting the two using the java.sql.* libraries.
+<h4 align="center"> Desktop App for MySQL DataBase</h4>
 
+<div align="center">
+  <p>I have implemented a desktop application using JavaFX that allows for the simple management of a MySQL database.</p>
+</div>
