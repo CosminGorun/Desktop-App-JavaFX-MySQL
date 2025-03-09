@@ -1,0 +1,67 @@
+{
+    "tables": {
+      "Furnizori": {
+        "columns": {
+          "idf": "VARCHAR(20) PRIMARY KEY",
+          "numef": "VARCHAR(20)",
+          "stare": "INT",
+          "oras": "VARCHAR(20)"
+        },
+        "data": [
+          {"idf": "F1", "numef": "Furnizor1", "stare": 10, "oras": "Bucuresti"},
+          {"idf": "F2", "numef": "Furnizor2", "stare": 20, "oras": "Cluj"},
+          {"idf": "F3", "numef": "Furnizor3", "stare": 15, "oras": "Iasi"},
+          {"idf": "F4", "numef": "Furnizor4", "stare": 25, "oras": "Timisoara"}
+        ]
+      },
+      "Componente": {
+        "columns": {
+          "idc": "VARCHAR(20) PRIMARY KEY",
+          "numec": "VARCHAR(20)",
+          "culoare": "VARCHAR(20)",
+          "masa": "INT",
+          "oras": "VARCHAR(20)"
+        },
+        "data": [
+          {"idc": "C1", "numec": "Componenta1", "culoare": "Rosu", "masa": 100, "oras": "Bucuresti"},
+          {"idc": "C2", "numec": "Componenta2", "culoare": "Albastru", "masa": 200, "oras": "Cluj"},
+          {"idc": "C3", "numec": "Componenta3", "culoare": "Verde", "masa": 150, "oras": "Iasi"},
+          {"idc": "C4", "numec": "Componenta4", "culoare": "Negru", "masa": 180, "oras": "Timisoara"}
+        ]
+      },
+      "Proiecte": {
+        "columns": {
+          "idp": "VARCHAR(20) PRIMARY KEY",
+          "numep": "VARCHAR(20)",
+          "oras": "VARCHAR(20)"
+        },
+        "data": [
+          {"idp": "P1", "numep": "Proiect1", "oras": "Bucuresti"},
+          {"idp": "P2", "numep": "Proiect2", "oras": "Cluj"},
+          {"idp": "P3", "numep": "Proiect3", "oras": "Iasi"},
+          {"idp": "P4", "numep": "Proiect4", "oras": "Timisoara"}
+        ]
+      },
+      "Livrare": {
+        "columns": {
+          "idf": "VARCHAR(20)",
+          "idc": "VARCHAR(20)",
+          "idp": "VARCHAR(20)",
+          "cantitate": "INT"
+        },
+        "foreign_keys": {
+          "idf": "Furnizori(idf)",
+          "idc": "Componente(idc)",
+          "idp": "Proiecte(idp)"
+        },
+        "data": [
+          {"idf": "F1", "idc": "C1", "idp": "P1", "cantitate": 50},
+          {"idf": "F2", "idc": "C2", "idp": "P2", "cantitate": 30},
+          {"idf": "F3", "idc": "C3", "idp": "P3", "cantitate": 40},
+          {"idf": "F4", "idc": "C4", "idp": "P4", "cantitate": 60},
+          {"idf": "F1", "idc": "C2", "idp": "P3", "cantitate": 25},
+          {"idf": "F2", "idc": "C3", "idp": "P4", "cantitate": 35}
+        ]
+      }
+    }
+  }
